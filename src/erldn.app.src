@@ -8,6 +8,6 @@
                   stdlib
                  ]},
   {mod, { erldn_app, []}},
-  {modules, {}},
+  {modules, []},
   {env, []}
  ]}.
