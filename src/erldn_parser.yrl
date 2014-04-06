@@ -13,11 +13,11 @@ list_items -> value list_items : ['$1'|'$2'].
 list -> open_list close_list : [].
 list -> open_list list_items close_list : '$2'.
 
-vector -> open_vector close_vector : {vector, []}.
-vector -> open_vector list_items close_vector : {vector, '$2'}.
+vector -> open_vector close_vector : [].
+vector -> open_vector list_items close_vector : '$2'.
 
-set -> sharp open_map close_map : {set, []}.
-set -> sharp open_map list_items close_map : {set, '$3'}.
+set -> sharp open_map close_map : [].
+set -> sharp open_map list_items close_map : '$3'.
 
 key_value_pair -> value value : {'$1', '$2'}.
 
