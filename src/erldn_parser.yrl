@@ -24,8 +24,8 @@ key_value_pair -> value value : {'$1', '$2'}.
 key_value_pairs -> key_value_pair : ['$1'].
 key_value_pairs -> key_value_pair key_value_pairs : ['$1'|'$2'].
 
-map -> open_map close_map : {map, []}.
-map -> open_map key_value_pairs close_map : {map, '$2'}.
+map -> open_map close_map : #{}.
+map -> open_map key_value_pairs close_map : #{ K => B || {K, V} <- '$2'}.
 
 tagged -> sharp symbol value : {tag, unwrap('$2'), '$3'}.
 
