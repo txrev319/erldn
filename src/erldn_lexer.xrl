@@ -73,7 +73,7 @@ Rules.
 Erlang code.
 
 make_token(Name, Line, Chars) when is_list(Chars) ->
-    {token, {Name, Line, {keyword, Char}}};
+    {token, {Name, Line, {keyword, Chars}}};
 make_token(Name, Line, Chars) ->
     {token, {Name, Line, Chars}}.
 
