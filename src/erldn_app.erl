@@ -4,6 +4,6 @@
 -export([start/2]).
 -export([stop/1]).
 
-start(_Type, _Args) -> .
+start(_Type, _Args) -> ok.
 
-stop(_State) -> .
+stop(_State) -> ok.
