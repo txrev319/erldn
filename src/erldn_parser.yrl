@@ -53,5 +53,3 @@ Erlang code.
 
 unwrap({_,V})   -> V;
 unwrap({_,_,V}) -> V.
-
-list_to_map (lst) -> #{ K => V || {K, V} <- lst}.
