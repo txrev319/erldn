@@ -25,7 +25,7 @@ key_value_pairs -> key_value_pair : ['$1'].
 key_value_pairs -> key_value_pair key_value_pairs : ['$1'|'$2'].
 
 map -> open_map close_map : #{}.
-map -> open_map key_value_pairs close_map : #{ K => K || K <- '$2'}.
+map -> open_map key_value_pairs close_map : {map, '$2'}.
 
 tagged -> sharp symbol value : {tag, unwrap('$2'), '$3'}.
 
@@ -53,3 +53,5 @@ Erlang code.
 
 unwrap({_,V})   -> V;
 unwrap({_,_,V}) -> V.
+
+list_to_map (lst) -> #{ K => V || {K, V} <- lst}.
