@@ -41,7 +41,7 @@ to_string({char, C}, Accum) -> [["\\"|[C]]|Accum];
 to_string({vector, Items}, Accum) -> ["]", items_to_string(Items), "["|Accum];
 to_string({set, Items}, Accum) -> ["}", items_to_string(Items), "#{"|Accum];
 to_string({map, Items}, Accum) -> ["}", keyvals_to_string(Items), "{"|Accum];
-to_string(Map, Accum) -> ["}", keyvals_to_string(Map), "{"|Accum];
+to_string(Map, Accum) when is_map(Map) -> ["}", keyvals_to_string(Map), "{"|Accum];
 to_string(Items, Accum) when is_list(Items) -> [")", items_to_string(Items), "("|Accum];
 to_string(true, Accum) -> ["true"|Accum];
 to_string(false, Accum) -> ["false"|Accum];
